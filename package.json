@@ -1,0 +1,33 @@
+{
+  "name": "suger",
+  "version": "1.0.0",
+  "description": "util ",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/song111/suger.git"
+  },
+  "keywords": [
+    "util"
+  ],
+  "author": "chrissong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/song111/suger/issues"
+  },
+  "homepage": "https://github.com/song111/suger#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.8.0",
+    "webpack": "^4.41.6",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
+  }
+}
