@@ -14,7 +14,8 @@
     <script src="../dist/suger.js"></script>
     <script>
         window.onload = function () {
-            var keys = Object.keys(suger.default);
+            console.log(suger)
+            var keys = Object.keys(suger);
             var lis = keys.map(item => {
                 return `<li>${item}</li>`;
             });
