@@ -1,5 +1,5 @@
 git add *
-git commit -m "npm 发布，代码提交"
+git commit -m "更新代码"
 git push
 
 git checkout master
