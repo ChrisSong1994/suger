@@ -1,15 +1,5 @@
 {
-  "presets": [
-    ["@babel/preset-env", {
-      "targets": {
-        "node": 8
-      }
-    }]
-  ],
-  "plugins": [
-    "@babel/plugin-transform-runtime",
-    "@babel/plugin-proposal-export-default-from",
-    "@babel/plugin-proposal-export-namespace-from"
-  ],
+  "presets": ["@babel/preset-env"],
+  "plugins": [ "@babel/plugin-transform-runtime"],
   "comments": true
 }
