@@ -4,7 +4,12 @@
   "description": "util ",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "dev": "",
+    "build": "",
+    "eslint": "",
+    "test": "",
+    "publish": "sh publish.sh && npm run push-master",
+    "push-master":"sh push-master.sh"
   },
   "repository": {
     "type": "git",
