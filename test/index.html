@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>suger test </title>
+</head>
+
+<body>
+        <h2>suger</h2>
+        <ul class="suger"></ul>
+    <script src="../dist/suger.js"></script>
+    <script>
+        window.onload = function () {
+            var keys = Object.keys(suger.default);
+            var lis = keys.map(item => {
+                return `<li>${item}</li>`;
+            });
+            document.querySelector('.suger').innerHTML = lis.join('');
+        }
+    </script>
+</body>
+
+</html>
