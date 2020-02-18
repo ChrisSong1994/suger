@@ -1,7 +1,7 @@
 {
   "name": "suger",
-  "version": "1.0.1",
-  "description": "util ",
+  "version": "1.0.2",
+  "description": "suger - private js util library",
   "main": "./dist/suger.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --config ./scripts/webpack.dev.config.js --color",
@@ -41,8 +41,5 @@
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2"
   },
-  "files": [
-    "./dist/suger.js",
-    "./dist/*"
-  ]
+  "files": ["dist"]
 }
