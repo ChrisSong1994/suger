@@ -1,5 +1,5 @@
 git add *
-git commit -m "更新代码"
+git commit -m "更新代码到master分支"
 git push
 
 git checkout master
