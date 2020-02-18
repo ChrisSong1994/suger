@@ -1,6 +1,6 @@
 {
   "name": "suger",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "suger - private js util library",
   "main": "./dist/suger.js",
   "scripts": {
@@ -25,6 +25,8 @@
   "homepage": "https://github.com/song111/suger#readme",
   "devDependencies": {
     "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "@babel/plugin-proposal-export-namespace-from": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
     "babel-eslint": "^10.0.3",
@@ -41,5 +43,7 @@
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2"
   },
-  "files": ["dist"]
+  "files": [
+    "dist"
+  ]
 }
