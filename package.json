@@ -1,6 +1,6 @@
 {
   "name": "suger",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "suger - private js util library",
   "main": "./dist/suger.js",
   "scripts": {
