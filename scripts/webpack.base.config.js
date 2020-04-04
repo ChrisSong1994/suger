@@ -6,7 +6,7 @@ const path = require("path");
 module.exports = {
   entry: {
     // eslint-disable-next-line no-undef
-    name: path.resolve(__dirname, "../lib/index.js")
+    name: path.resolve(__dirname, "../index.js")
   },
   module: {
     rules: [

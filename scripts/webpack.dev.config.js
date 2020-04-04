@@ -6,7 +6,7 @@ const baseWebpackConfig = require("./webpack.base.config");
 
 // eslint-disable-next-line no-undef
 const name = process.env.npm_package_name;
-
+console.log(name);
 module.exports = merge(baseWebpackConfig, {
   mode: "development",
   output: {
