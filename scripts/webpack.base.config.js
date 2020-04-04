@@ -22,6 +22,10 @@ module.exports = {
     ]
   },
   resolve: {
+    alias:{
+      // eslint-disable-next-line no-undef
+      lib:path.resolve(__dirname,"../lib")
+    },
     extensions: [".js"]
   }
 };

@@ -1,5 +1,8 @@
-const suger = require("../dist/suger.js");
+const Suger = require("../dist/suger.js");
 
-console.log(Object.keys(suger));
+console.log(Object.keys(Suger));
 
-console.log(suger.keys({ a: "1" }));
+console.log(Suger.keys({ a: "1" }));
+
+
+Suger([1, 2, 3]).each(val => console.log(val));
