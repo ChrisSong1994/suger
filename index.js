@@ -13,15 +13,12 @@ const packageConfig = require("./package.json");
 Suger.version = packageConfig.version;
 Suger.description = packageConfig.description;
 
-//扩展 所有方法到 Suger 上
-const modules = require.context("./lib", true, /\.js$/); // 返回 webpackContext 函数
+//扩展所有方法(_开头js方法是私有方法常量集)到 Suger 上
+const modules = require.context("./lib", true, /[^_]\.js$/); 
 const requireAll = context => context.keys().map(context);
 requireAll(modules).forEach((item, i) => {
   const fileName = modules.keys()[i];
-  const moduleName = fileName.substring(
-    fileName.lastIndexOf("/") + 1,
-    fileName.lastIndexOf(".")
-  );
+  const moduleName =  fileName.match(/\/(\w+)\.js$/);
   Suger[moduleName] = item.default;
 });
 

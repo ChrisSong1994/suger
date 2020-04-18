@@ -4,7 +4,7 @@
   "description": "suger - private js util library",
   "main": "./dist/suger.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev webpack-dev-server --config ./scripts/webpack.dev.config.js --color",
+    "start": "cross-env NODE_ENV=dev webpack-dev-server --config ./scripts/webpack.dev.config.js --color",
     "build": "cross-env NODE_ENV=prod webpack --config ./scripts/webpack.build.config.js --color",
     "eslint": "eslint -c .eslintrc.js lib/** --fix",
     "publish-npm": "npm run push-master && sh publish.sh",
