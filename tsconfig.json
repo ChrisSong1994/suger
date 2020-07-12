@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": false,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["es6"],
+    "sourceMap": false,
+    "types": ["node"]
+  },
+  "include": ["*.ts", "scripts/build.ts"]
+}
