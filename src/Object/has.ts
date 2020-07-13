@@ -7,3 +7,9 @@ const has = (obj: object, prop: string) => {
 }
 
 export default has
+
+/***********test**************/
+
+// console.log(has({ a: 'a', b: 'b' }, 'a'))
+
+/***********test**************/

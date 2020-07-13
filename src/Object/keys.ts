@@ -13,10 +13,10 @@ const keys = (obj: object): Array<any> => {
   return keysArr
 }
 
-/***********test**************/
-
-console.log(keys({ a: 'a', b: 'b' }))
-
-/***********test**************/
-
 export default keys
+
+/***********test**************/
+
+// console.log(keys({ a: 'a', b: 'b' }))
+
+/***********test**************/

@@ -5,14 +5,21 @@ import keys from './keys'
  * @returns {Array} valueArr
  *
  */
-const values = (obj: object): Array<any> => {
-  const keyArr = keys(obj)
-  const length = keyArr.length
-  const valueArr = Array(length)
+const values = (obj: { [key: string]: any } = {}): Array<any> => {
+  const keyArr: string[] = keys(obj)
+  const length: number = keyArr.length
+  const valueArr: any[] = Array(length)
+
   for (let i = 0; i < length; i++) {
-    valueArr[i] = obj[keys[i]]
+    valueArr[i] = obj[keyArr[i]]
   }
   return valueArr
 }
 
 export default values
+
+/***********test**************/
+
+console.log(values({ a: 'a', b: 'b' }))
+
+/***********test**************/

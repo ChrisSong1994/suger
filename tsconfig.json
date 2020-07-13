@@ -4,9 +4,9 @@
     "removeComments": true,
     "preserveConstEnums": false,
     "allowSyntheticDefaultImports": true,
-    "lib": ["es6"],
     "sourceMap": false,
+    "lib": ["es6"],
     "types": ["node"]
   },
-  "include": ["*.ts", "scripts/build.ts"]
+  "include": ["*.ts"]
 }

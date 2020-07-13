@@ -2,11 +2,11 @@
  * @param {function} fn  节流处理的函数
  * @param {number}  wait  时间间隔
  *  */
-const throttle = (fn, wait: number) => {
+const throttle = (fn: any, wait: number) => {
   // previous 是上一次执行 fn 的时间
-  let previous = 0,
-    timer = null
-  return (...args) => {
+  let previous: number = 0
+  let timer: any = null
+  return (...args: any[]): void => {
     let now = +new Date()
     // 判断上次触发的时间和本次触发的时间差是否小于时间间隔
     if (now - previous < wait) {

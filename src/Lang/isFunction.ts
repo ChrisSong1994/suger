@@ -1,4 +1,4 @@
-import { checkType } from '../Internal/util'
+import { checkType } from '../util'
 
 const isFunction = function (target: any): boolean {
   const type = checkType(target)

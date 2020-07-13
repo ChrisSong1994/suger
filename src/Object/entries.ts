@@ -4,13 +4,13 @@ import keys from './keys'
  *  @param {Object} obj
  *
  */
-const entries = (obj: object = {}) => {
+const entries = (obj: { [key: string]: any } = {}) => {
   if (Object.entries) {
     return Object.entries(obj)
   }
-  let keysArr = keys(obj)
-  let length = keysArr.length
-  let entries = Array[length]
+  let keysArr: string[] = keys(obj)
+  let length: number = keysArr.length
+  let entries: any[] = Array(length)
   for (let i = 0; i < length; i++) {
     entries[i] = [keysArr[i], obj[keysArr[i]]]
   }
@@ -18,3 +18,9 @@ const entries = (obj: object = {}) => {
 }
 
 export default entries
+
+/***********test**************/
+
+console.log(entries({ a: 'a', b: 'b' }))
+
+/***********test**************/

@@ -1,4 +1,4 @@
-import { checkType } from '../Internal/util'
+import { checkType } from '../util'
 
 /**
  * @param {any} target
