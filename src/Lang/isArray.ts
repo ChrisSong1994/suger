@@ -1,11 +1,5 @@
-import { checkType } from '../util'
-
 /**
  * @param {any} target
  */
-const isArray = (target: any) => {
-  if (Array.isArray) return Array.isArray(target)
-  return checkType(target) === 'Array'
-}
-
+const isArray = Array.isArray
 export default isArray
