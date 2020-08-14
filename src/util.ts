@@ -6,6 +6,7 @@ export const checkType = (target: any) => {
   return Object.prototype.toString.call(target).slice(8, -1)
 }
 
+
 /** 查找对象的属性
  * @param {string} key
  */
@@ -15,15 +16,21 @@ export const shallowProperty = function (key: string) {
   }
 }
 
+
+
 /**  获取对象的 length 属性
  * @param {object}
  */
 export const getLength = shallowProperty('length')
 
+
+
 // 判断是否返回opp
 export const result = function (instance: any, obj: any, host: any) {
   return instance._chain ? host(obj).chain() : obj
 }
+
+
 
 // 根据 this 指向（context 参数）
 // 以及 argCount 参数
