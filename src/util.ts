@@ -1,3 +1,11 @@
+//  内部方法
+/**  数据类型检查
+ * @param {any} target
+ */
+export const checkType = (target: any) => {
+  return Object.prototype.toString.call(target).slice(8, -1)
+}
+
 /** 查找对象的属性
  * @param {string} key
  */

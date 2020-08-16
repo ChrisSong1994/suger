@@ -1,6 +1,5 @@
 /**
- * @param {*} target
- * @returns {Boolean}
+ * @param {any} target
  */
 const isObject = function (target: any): boolean {
   const type = typeof target

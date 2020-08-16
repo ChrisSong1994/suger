@@ -1,9 +1,9 @@
 /**
- * @param {*} value
- * @returns {Boolean}
+ *
+ * @param {any} target
  */
-const isObjectLike = (value: any): boolean => {
-  return value != null && typeof value === 'object'
+const isObjectLike = (target: any): boolean => {
+  return target != null && typeof target === 'object'
 }
 
 export default isObjectLike
