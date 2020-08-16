@@ -1,7 +1,10 @@
-import { checkType } from '../util'
-
+/**
+ * @param {*} target
+ * @returns {Boolean}
+ */
 const isObject = function (target: any): boolean {
-  return checkType(target) === 'Object'
+  const type = typeof target
+  return target != null && (type === 'object' || type === 'function')
 }
 
 export default isObject

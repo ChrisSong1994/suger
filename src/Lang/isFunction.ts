@@ -1,8 +1,11 @@
-import { checkType } from '../util'
+import getTag from '../Internal/_getTag'
 
+/**
+ * @param {*} target
+ * @returns {Boolean}
+ */
 const isFunction = function (target: any): boolean {
-  const type = checkType(target)
-  return type === 'Function'
+  return getTag(target) === '[object Function]'
 }
 
 export default isFunction

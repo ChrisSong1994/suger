@@ -1,7 +1,11 @@
-import { checkType } from '../util'
+import getTag from '../Internal/_getTag'
 
+/**
+ * @param {*} target
+ * @returns {Boolean}
+ */
 const isSymbol = function (target: any): boolean {
-  return checkType(target) === 'Symbol'
+  return getTag(target) === '[object Symbol]'
 }
 
 export default isSymbol

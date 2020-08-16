@@ -1,12 +1,15 @@
 /****************************Object**********************************/
-import { default as keys } from './Object/keys'
+export { default as keys } from './Object/keys'
+export { default as entries } from './Object/entries'
+export { default as has } from './Object/has'
+export { default as allKeys } from './Object/allKeys'
 
 /****************************Function**********************************/
-import { default as debounce } from './Function/debounce'
+export { default as debounce } from './Function/debounce'
+export { default as throttle } from './Function/throttle'
 
-/****************************Object**********************************/
+/****************************Array**********************************/
 
-/****************************Object**********************************/
+/****************************Collection**********************************/
 
-/****************************Object**********************************/
-export { debounce, keys }
+/****************************String**********************************/
