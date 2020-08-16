@@ -9,8 +9,14 @@ import isPrototype from './_isPrototype'
 
 const hasOwnProperty = Object.prototype.hasOwnProperty
 
+interface RegExecArray {
+  [key: number]: any
+  length: number
+  index?: number
+  input?: string
+}
+
 /**
- * `Boolean`, `Date`,  `Map`, `Number`, `RegExp`, `Set`, or `String`.
  * @param {Object} object
  * @param {string} tag
  * @returns {Object}
@@ -37,9 +43,9 @@ const initCloneByTag = (object: any, tag: string): any => {
 }
 
 // 拷贝数组
-const initCloneArray = (array: regExecArray) => {
+const initCloneArray = (array: RegExecArray) => {
   const { length } = array
-  const result = new Array(array.length)
+  const result: RegExecArray = new Array(array.length)
   //需要考虑正则exec 执行返回的数组结构
   if (length && isString(array[0]) && hasOwnProperty.call(array, 'index')) {
     result.index = array.index
@@ -55,7 +61,7 @@ function initCloneObject(object) {
     : {}
 }
 
-/**
+/** 深拷贝
  * @param {*} value
  * @param {WeekMap} hash  存放已经引用的对象
  * @returns {*}
@@ -95,30 +101,12 @@ const deepClone = (value: any, hash = new WeakMap()): any => {
     })
     return result
   }
+
+  // 递归
+  for (let key in value) {
+    // 递归
+    result[key] = deepClone(value[key], hash)
+  }
 }
 
 export default deepClone
-
-//---------------------- test--------------------
-
-function Person(pname) {
-  this.name = pname
-}
-
-const kobe = new Person('kobe')
-
-// 函数
-function say() {
-  console.log('hi')
-}
-
-const oldObj = {
-  a: say,
-  b: new Array(1),
-  c: new RegExp('ab+c', 'i'),
-  d: Person,
-}
-
-const cloneObject = deepClone(oldObj)
-
-console.log(cloneObject)
