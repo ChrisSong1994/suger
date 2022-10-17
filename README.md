@@ -1,9 +1,21 @@
-# suger
+# dumi app
 
-private util library
+## Getting Started
 
-开发：`ts-node fileName.ts`
+Install dependencies,
 
-打包：`npm run build`
+```bash
+$ npm i
+```
 
-测试：`npm run test`
+Start the dev server,
+
+```bash
+$ npm start
+```
+
+Build site app,
+
+```bash
+$ npm run build
+```
