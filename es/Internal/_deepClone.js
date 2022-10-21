@@ -6,23 +6,13 @@ import getTag from './_getTag';
 import cloneRegExp from './_cloneRegExp';
 import cloneSymbol from './_cloneSymbol';
 import isPrototype from './_isPrototype';
-
 const hasOwnProperty = Object.prototype.hasOwnProperty;
-
-interface RegExecArray {
-  [key: number]: any;
-  length: number;
-  index?: number;
-  input?: string;
-}
-
 /**
  * @param {Object} object
  * @param {string} tag
  * @returns {Object}
  */
-
-const initCloneByTag = (object: any, tag: string): any => {
+const initCloneByTag = (object, tag) => {
   // 根据对象构造函数重新创建新的对象
   const Constructor = object.constructor;
   switch (tag) {
@@ -41,11 +31,10 @@ const initCloneByTag = (object: any, tag: string): any => {
       return cloneSymbol(object);
   }
 };
-
 // 拷贝数组
-const initCloneArray = (array: RegExecArray) => {
+const initCloneArray = (array) => {
   const { length } = array;
-  const result: RegExecArray = new Array(array.length);
+  const result = new Array(array.length);
   //需要考虑正则exec 执行返回的数组结构
   if (length && isString(array[0]) && hasOwnProperty.call(array, 'index')) {
     result.index = array.index;
@@ -53,23 +42,20 @@ const initCloneArray = (array: RegExecArray) => {
   }
   return result;
 };
-
 // 拷贝函数
-function initCloneObject(object: any) {
+function initCloneObject(object) {
   return typeof object.constructor == 'function' && !isPrototype(object)
     ? Object.create(Object.getPrototypeOf(object))
     : {};
 }
-
 /** 深拷贝
  * @param {*} value
  * @param {WeekMap} hash  存放已经引用的对象
  * @returns {*}
  */
-const deepClone = (value: any, hash = new WeakMap()): any => {
+const deepClone = (value, hash = new WeakMap()) => {
   // 不是复杂类型直接返回
   if (isObject(value)) return value;
-
   let result;
   const tag = getTag(value);
   // 根据数据类型创建对象
@@ -78,15 +64,12 @@ const deepClone = (value: any, hash = new WeakMap()): any => {
   } else {
     result = initCloneByTag(value, tag);
   }
-
   if (tag === tags['funcTag']) {
     result = initCloneObject(value);
   }
-
   // 循环引用
   if (hash.has(value)) return hash.get(value);
   hash.set(value, result);
-
   // // set map 赋值
   // if (tag == tag['mapTag']) {
   //   value.forEach((subValue, key) => {
@@ -94,19 +77,16 @@ const deepClone = (value: any, hash = new WeakMap()): any => {
   //   })
   //   return result
   // }
-
   // if (tag == tag['setTag']) {
   //   value.forEach((subValue) => {
   //     result.add(deepClone(subValue, hash))
   //   })
   //   return result
   // }
-
   // 递归
   for (let key in value) {
     // 递归
     result[key] = deepClone(value[key], hash);
   }
 };
-
 export default deepClone;

@@ -5,13 +5,18 @@
   "module": "es/index.js",
   "unpkg": "dist/suger.min.js",
   "typings": "lib/index.d.ts",
-  "type": "module",
+  "author": "ChrisSong",
+  "license": "MIT",
   "scripts": {
-    "dev": "rollup  -c -w  --environment NODE_ENV:development",
-    "build": "npm run clean && rollup  -c  --environment NODE_ENV:production",
+    "dev": "tsc --watch --build ./tsconfig.cjs.json",
+    "build": "npm-run-all --serial build:*",
+    "build:umd": "rollup -c ",
+    "build:cjs": "tsc --build ./tsconfig.cjs.json",
+    "build:es": "tsc --build ./tsconfig.json",
     "docs:start": "dumi dev",
     "docs:build": "dumi build",
-    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\""
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "test": "jest"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -41,7 +46,12 @@
     "rollup": "^3.2.2",
     "rollup-plugin-dts": "^4.2.3",
     "rollup-plugin-terser": "^7.0.2",
+    "ts-jest": "^29.0.3",
+    "tsc": "^2.0.4",
     "typescript": "^4.8.4",
     "yorkie": "^2.0.0"
+  },
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
   }
 }

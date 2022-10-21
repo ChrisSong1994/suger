@@ -2,14 +2,14 @@
   "compilerOptions": {
     "strict": true,
     "target": "es2019",
-    "module": "ES2015",
+    "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "declaration": true,
     "esModuleInterop": true,
     "baseUrl": "./",
-    "outDir": "./es",
+    "outDir": "./lib",
     "rootDir": "./src"
   },
   "include": ["src"]

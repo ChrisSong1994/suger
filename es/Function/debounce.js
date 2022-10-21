@@ -3,20 +3,16 @@
  * @param {number} wait  间隔时间
  * @param {boolean} immediate  是否立即执行参数
  *  */
-
-const debounce = function (fn: () => void, wait: number, immediate: boolean) {
-  let timer: any = null;
-  return function (...args: any[]): void {
+const debounce = function (fn, wait, immediate) {
+  let timer = null;
+  return function (...args) {
     if (timer) clearTimeout(timer);
-
     if (immediate && !timer) {
       // fn.apply(this, args) // this 指向调用防抖函数的对象
     }
-
     timer = setTimeout(() => {
       // fn.apply(this, args)
     }, wait);
   };
 };
-
 export default debounce;

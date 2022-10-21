@@ -1,20 +1,22 @@
-# dumi app
+# Suger
 
-## Getting Started
+## 开发
 
-Install dependencies,
+安装依赖
 
 ```bash
 $ npm i
 ```
 
-Start the dev server,
+开发
 
 ```bash
-$ npm start
+$ npm run dev
 ```
 
-Build site app,
+## 打包
+
+`esm` 和 `commonjs` 模块将采用 _Bundless_ 模式，`UMD` 模块采用 _Bundle_
 
 ```bash
 $ npm run build
