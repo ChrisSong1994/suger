@@ -21,3 +21,10 @@ $ npm run dev
 ```bash
 $ npm run build
 ```
+
+## 发布
+
+```bash
+npm login
+npm publish --access public
+```

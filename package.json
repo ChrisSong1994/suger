@@ -16,7 +16,8 @@
     "docs:start": "dumi dev",
     "docs:build": "dumi build",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
-    "test": "jest"
+    "test": "jest",
+    "prepublish": "npm run build"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
